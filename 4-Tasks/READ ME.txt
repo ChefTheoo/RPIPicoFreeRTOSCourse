@@ -1,0 +1,35 @@
+
+From :
+
+#define LED_PAD     1
+#define LED1_PAD    2
+#define LED2_PAD    3
+
+To :
+
+#define LED_PAD     2
+#define LED1_PAD    3
+#define LED2_PAD    4
+
+From : 
+
+vTaskDelay(3000);
+
+To : 
+
+vTaskDelay(2000);
+
+From :
+
+sleep_ms(2000);
+
+To :
+
+sleep_ms(3000);
+
+
+To Summarize : 
+
+I have changed the led pin from 1 2 3 to 2 3 4
+I have changed the TaskDelay from 3000 to 2000
+And I have changed the sleep ms from 2000 to 3000
