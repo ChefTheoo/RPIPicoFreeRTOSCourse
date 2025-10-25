@@ -1,0 +1,24 @@
+Semaphore LimitWorkers main.cpp
+
+In this file the question was what if we had 2 tokens and 4 BlinkWorker ?
+
+with 2 tokens and 4 blinkworker, there will be only 2 worker working at the same time while the others 2 will wait for a token to be released.
+
+So in this code I modified multiple line, here are the modification and their meaning :
+
+from :
+
+	SemaphoreHandle_t sem = xSemaphoreCreateCounting(3, 2);
+	worker1.setSemaphore(sem);
+	worker2.setSemaphore(sem);
+	worker3.setSemaphore(sem);
+
+to : 
+
+	SemaphoreHandle_t sem = xSemaphoreCreateCounting(2, 2);
+	worker1.setSemaphore(sem);
+	worker2.setSemaphore(sem);
+	worker3.setSemaphore(sem);
+	worker4.setSemaphore(sem);
+
+Here i added 1 more BlinkWorker and removed 1 token to match the question and as we can see in the RP2040 there is only 2 led blinking at the same time while the 2 others led are waiting for their turn.
