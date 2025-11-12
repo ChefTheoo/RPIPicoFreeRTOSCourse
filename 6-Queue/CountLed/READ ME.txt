@@ -1,0 +1,10 @@
+READ ME CountLed.cpp
+
+I modified :
+
+#define LED_PAD				0
+
+to : 
+
+#define LED_PAD				25
+
